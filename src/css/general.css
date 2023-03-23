@@ -1,0 +1,16 @@
+:root{
+        --saturn_spear: url("/assets/images/saturn_spear_cursor_icon.png");
+        --saturn_liprod: url("/assets/images/saturn_liprod_cursor_icon.png");
+}
+
+body{
+        margin: 0;
+        height: 100vh;
+        cursor: var(--saturn_spear), auto;
+}
+
+a:hover,
+a:active,
+a:visited {
+        cursor: var(--saturn_liprod), auto;
+}
