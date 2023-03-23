@@ -11,6 +11,7 @@ body{
 
 a:hover,
 a:active,
-a:visited {
+a:visited,
+button:hover{
         cursor: var(--saturn_liprod), auto;
 }
