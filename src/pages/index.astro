@@ -1,17 +1,16 @@
 ---
+import "../css/index.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
-let users: string[] = [];
-let winner: string;
 if (Astro.request.method === "POST") {
-	
 }
 ---
 
 <BaseLayout title="U Z ∆ Y   H ∆ L K I">
-	
-	
-
-
-
-	
+  <div class="container">
+    <div class="input">
+      <div class="text-1">Katılımcılar</div>
+      <input type="text" class="participants" />
+      <button class="roll">ROLL</button>
+    </div>
+  </div>
 </BaseLayout>
