@@ -1,16 +1,29 @@
 ---
 import "../css/index.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import winnerPicker from "../js/winnerPicker.js";
+import Winners from "../components/Winners.astro";
+
+let result: string[] | string = [];
+let isHaveError: boolean = false;
+// const rollMethod: "csv" | "manual" | "youtube";
 if (Astro.request.method === "POST") {
+  const data = await Astro.request.formData();
+  const participants = data.get("participants");
+  result = winnerPicker(participants.toString().split(" "), 5);
+  isHaveError = typeof result === "string" ? true : false;
 }
 ---
 
 <BaseLayout title="U Z ∆ Y   H ∆ L K I">
   <div class="container">
-    <div class="input">
-      <div class="text-1">Katılımcılar</div>
-      <input type="text" class="participants" />
-      <button class="roll">ROLL</button>
-    </div>
+    <form method="post">
+      <div class="input">
+        <div class="text-1">Katılımcılar</div>
+        <input type="text" class="participants" name="participants" />
+        {!isHaveError ? <Winners winners={result} /> : <p>{result}</p>}
+        <button class="roll" type="submit">ROLL</button>
+      </div>
+    </form>
   </div>
 </BaseLayout>

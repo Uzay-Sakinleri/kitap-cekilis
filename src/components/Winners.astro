@@ -1,0 +1,5 @@
+---
+const { winners } = Astro.props;
+---
+
+<ul>{winners.map((winner: string) => <li>{winner}</li>)}</ul>
