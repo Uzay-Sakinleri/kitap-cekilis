@@ -22,7 +22,7 @@ button:hover{
         cursor: var(--saturn_liprod), auto;
 }
 
-textarea:hover{
+textarea:hover, input[type="text"]:hover{
         cursor: var(--sailor-pencil), auto;
 }
 
