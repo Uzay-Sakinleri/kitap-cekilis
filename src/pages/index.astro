@@ -3,19 +3,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 let users: string[] = [];
 let winner: string;
 if (Astro.request.method === "POST") {
-	const data = await Astro.request.formData();
-	const tUsers = data.get("users");
-	users = tUsers.toString().split(" ");
-	winner = users[Math.floor(Math.random() * users.length)];
+	
 }
 ---
 
-<BaseLayout title="UzayZuhal Kitap Çekiliş">
-	<form method="post">
-		<textarea name="users" id="" cols="30" rows="10"></textarea>
-		<button type="submit">Roll</button>
-	</form>
-	{users.map((user) => <p>{user}</p>)}
-	<span>Winner is:</span>
-	<p>{winner}</p>
+<BaseLayout title="U Z ∆ Y   H ∆ L K I">
+	
+	
+
+
+
+	
 </BaseLayout>
