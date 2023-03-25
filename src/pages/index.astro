@@ -13,7 +13,7 @@ if (Astro.request.method === "POST") {
   const participants = data.get("participants");
   result = winnerPicker(participants.toString().split(" "), 5);
   isHaveError = typeof result === "string" ? true : false;
-  if (!isHaveError) new Date().toLocaleDateString();
+  if (!isHaveError) await saveToCSV(result, "Kitap Çekilişi");
 }
 ---
 
