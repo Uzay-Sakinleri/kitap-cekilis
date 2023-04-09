@@ -10,7 +10,7 @@ const saveToCSV = async (winnersOfMonth, type) => {
   }
   const currentData = (new Date()).toLocaleDateString();
   winnersOfMonth.map(async (winner) =>  
-  await fs.promises.appendFile(`${fullPath}`, `\n${winner},${currentData},${type}`, {flag: "a"}))
+  await fs.promises.writeFile(`${fullPath}`, `\n${winner},${currentData},${type}`, {flag: "a"}))
 }
 
 export default saveToCSV;
