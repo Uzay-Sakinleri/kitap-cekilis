@@ -1,0 +1,38 @@
+---
+import "../css/index.css";
+const { choices } = Astro.props;
+---
+
+<div class="container">
+  <form method="post" enctype="multipart/form-data">
+    <div class="input">
+      <div class="text-1">Katılımcılar</div>
+      <slot />
+      <section class="choice-sec">
+        {
+          // choices.map((choice: string) => (
+          //   <>
+          //     <label id={`roll-method-${choice}`}>{choice}</label>
+          //     <input
+          //       type="radio"
+          //       name="roll-method"
+          //       id={`roll-method-${choice}`}
+          //       value={choice}
+          //     />
+          //   </>
+          // ))
+
+                <select name="roll-method" id={`roll-method`}>
+
+                  {choices.map((choice: string) => (
+                        <option value={choice}  id={`roll-method-${choice}`}>{choice}</option>
+                  ))}
+                   
+                  </select>
+      
+        }
+      </section>
+      <button class="roll" type="submit">ROLL</button>
+    </div>
+  </form>
+</div>
