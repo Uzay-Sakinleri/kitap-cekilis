@@ -5,8 +5,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import winnerPicker from "../js/winnerPicker";
 import saveToCSV from "../js/saveToCSV";
 import Winners from "../components/Winners.astro";
-import winnerPicker from "../js/winnerPicker.js";
-import saveToCSV from "../js/saveToCSV.js";
 
 let result: string[] | string = [];
 let isHaveError: boolean = false;
@@ -41,6 +39,14 @@ if (Astro.request.method === "POST") {
       accept=".csv"
       id="inp-file"
     />
-    {!isHaveError ? <Winners winners={result} /> : <p>{result}</p>}
+    {
+      isHaveError ? (
+        <Winners winners={result} />
+      ) : result.length == 0 ? (
+        ""
+      ) : (
+        <p>{result}</p>
+      )
+    }
   </GiveawayForm>
 </BaseLayout>
