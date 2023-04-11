@@ -1,7 +1,7 @@
 export default function winnerPicker(users, count) {
   if(users.length < count) {
-    // Geçiçi bir uyarı yazısı, sonrasında daha bilgilendiric bir yazı yazılacaktır
-    return "Seçtiğin sayıda kullanıcı bulunmamaıştır";
+    // Geçiçi bir uyarı yazısı, sonrasında daha bilgilendirici bir yazı yazılacaktır
+    return "Seçtiğin sayıda kullanıcı bulunamamıştır";
   }
   const participants = [...users];
   const winners = [];

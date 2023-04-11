@@ -10,17 +10,26 @@ const { choices } = Astro.props;
       <slot />
       <section class="choice-sec">
         {
-          choices.map((choice: string) => (
-            <>
-              <label id={`roll-method-${choice}`}>{choice}</label>
-              <input
-                type="radio"
-                name="roll-method"
-                id={`roll-method-${choice}`}
-                value={choice}
-              />
-            </>
-          ))
+          // choices.map((choice: string) => (
+          //   <>
+          //     <label id={`roll-method-${choice}`}>{choice}</label>
+          //     <input
+          //       type="radio"
+          //       name="roll-method"
+          //       id={`roll-method-${choice}`}
+          //       value={choice}
+          //     />
+          //   </>
+          // ))
+
+                <select name="roll-method" id={`roll-method`}>
+
+                  {choices.map((choice: string) => (
+                        <option value={choice}  id={`roll-method-${choice}`}>{choice}</option>
+                  ))}
+                   
+                  </select>
+      
         }
       </section>
       <button class="roll" type="submit">ROLL</button>
