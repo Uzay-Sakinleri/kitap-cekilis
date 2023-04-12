@@ -10,7 +10,7 @@ const { choices } = Astro.props;
       <slot />
       <section class="choice-sec">
         {
-              <select name="roll-method" id={`roll-method`}>
+              <select name="roll-method" id={`roll-method`} > 
 
                 {choices.map((choice: string) => (
                       <option value={choice}  id={`roll-method-${choice}`}>{choice}</option>

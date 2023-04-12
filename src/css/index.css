@@ -115,3 +115,9 @@ select option {
 select::-ms-expand {
   display: none;
 }
+
+
+.inp-file.inp-file {
+  display: none;
+}
+
