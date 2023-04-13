@@ -6,6 +6,7 @@ import winnerPicker from "../js/winnerPicker";
 import saveToCSV from "../js/saveToCSV";
 import Winners from "../components/Winners.astro";
 
+let method = localStorage.getItem("select");
 let result: string[] | string = [];
 let isHaveError: boolean = false;
 if (Astro.request.method === "POST") {
@@ -31,14 +32,9 @@ if (Astro.request.method === "POST") {
 
 <BaseLayout title="U Z ∆ Y   H ∆ L K I">
   <GiveawayForm choices={["Manual Entry", "Csv File"]}>
-    <!-- <input type="text" class="participants inp-manual" name="participants" /> -->
-    <input
-      type="file"
-      class="participants inp-file"
-      name="participants"
-      accept=".csv"
-      id="inp-file"
-    />
+      <input type="text" class="participants inp-manual" name="participants" />
+
+      <input type="file" class="participants inp-file" name="participants" accept=".csv" id="inp-file"/>
     {
       isHaveError ? (
         <Winners winners={result} />
@@ -49,4 +45,25 @@ if (Astro.request.method === "POST") {
       )
     }
   </GiveawayForm>
-</BaseLayout>
+	</BaseLayout>
+
+
+  <script defer>
+      const toggleDisplay = (selector, display) => {
+      document.querySelector(selector).style.display = display;
+    };
+
+    const handleSelectChange = (e) => {
+      const selectedValue = e.target.value;
+      const displayManual = selectedValue === "Manual Entry" ? "block" : "none";
+      const displayFile = selectedValue === "Manual Entry" ? "none" : "block";
+
+      toggleDisplay(".inp-manual", displayManual);
+      toggleDisplay(".inp-file", displayFile);
+    };
+
+    document.querySelector(".inp-manual")["style"].display = "block";
+
+    const select = document.querySelector("select");
+    select.addEventListener("change", handleSelectChange);
+  </script>

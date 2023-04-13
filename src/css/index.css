@@ -78,6 +78,46 @@
 
 }
 
-.radio-type {
-  
+select {
+  font-family: Arial, sans-serif;
+  font-size: 1vw;
+  color: #333;
+  text-align: center;
+  padding: 10px 20px 10px 20px;
+  width: 25;
+  text-shadow: 2px 2px 2px #ce1141;
+  box-shadow: 2px 2px 2px  black;
+  border-radius: 10px;
+  background: #ffffff; 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  overflow: hidden;
+  white-space: nowrap; 
+  margin-bottom: 25px;
 }
+
+select:hover {
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+}
+
+select option {
+  font-size: 16px;
+  color: #d50000; /* smooth red */
+  background: #f3e5f5; /* purple */
+  text-align: center;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+
+.inp-file.inp-file {
+  display: none;
+}
+
