@@ -6,7 +6,6 @@ import winnerPicker from "../js/winnerPicker";
 import saveToCSV from "../js/saveToCSV";
 import Winners from "../components/Winners.astro";
 
-let method = localStorage.getItem("select");
 let result: string[] | string = [];
 let isHaveError: boolean = false;
 if (Astro.request.method === "POST") {
