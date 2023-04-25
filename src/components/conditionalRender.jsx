@@ -11,7 +11,7 @@ export default function ConditionalRender({ choices }) {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setText(trure);
+      setText(true);
     } else {
       setText(false);
     }
