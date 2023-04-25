@@ -20,11 +20,11 @@ const handleFileChange = (e) => {
   const checkInput = (e) => {
     if(selectedValue === 'Manuel Giriş') {
       if(text == '') {
-        alert('Please enter a name');
+        alert('Lütfen kullanıcıları giriş yaptıktan sonra basın.');
         e.preventDefault();
       } 
     } else if (!text) {
-        alert('Please select a file');
+        alert('Lütfen kullanıcıların olduğu csv dosyasını seçtikten sonra basın.');
         e.preventDefault();
     }
   }
