@@ -19,6 +19,20 @@ const { choices, types } = Astro.props;
     </div>
   </form>
 </div>
+<div class="winners-div" id="winners_div">
+  <section id="winners_sec" class="winners-sec">
+    <span class="close-winners" id="close_winners">X</span>
+    <ul id="winners" class="winners-box">
+      <article class="winners-of-month" id="winners_of_month">
+        <h3>Kazananlar</h3>
+      </article>
+      <article class="subwinners-of-month" id="subwinners_of_month">
+        <h3>Yedekler</h3>
+      </article>
+    </ul>
+  </section>
+</div>
 <script>
   import "@js/winnerPicker";
+  import "@js/displayWinners";
 </script>

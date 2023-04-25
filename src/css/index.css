@@ -163,4 +163,67 @@ select::-ms-expand {
 
 }
 
+.winners-sec{
+  background: linear-gradient(90deg, rgba(36,0,35,1) 0%, rgba(121,9,120,1) 35%, rgba(59,0,255,1) 100%);
+  position: relative;
+  width: 960px;
+  height: 476px;
+  font-size: 1.5rem;
+  color: gold;
+  animation: winnersPop ease-in-out 1 1s;
+}
 
+@keyframes winnersPop {
+  0%{
+    opacity: 0;
+    left: -100%;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+    left: 2vw;
+  }
+}
+
+.winners-box {
+  display: flex;
+  list-style: none;
+  position: relative;
+  flex-wrap: wrap;
+  padding: 0;
+  width: auto;
+  height: auto;
+  justify-content: space-evenly;
+}
+
+.winners-box article {
+  text-align: center;
+  width: 200px;
+  height: auto;
+}
+
+.winners-div{
+  display: none;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  background: rgba(0,0,0, 0.5);
+  z-index: 1;
+}
+
+.close-winners{
+color: #DB172A;
+font-size: 30px;
+margin-left: 930px;
+}
+
+.close-winners:hover{
+  opacity: 0.5;
+  cursor: pointer;
+}
