@@ -6,14 +6,14 @@ export default function ConditionalRender({ choices }) {
 
   const handleSelectChange = (e) => {
     setSelectedValue(e.target.value);
-    setShowManualInput(e.target.value === 'Manual Entry');
+    setShowManualInput(e.target.value === 'Manuel Giriş');
   };
 
   return (
     <>
-  {selectedValue === 'Manual Entry' ? (
+  {selectedValue === 'Manuel Giriş' ? (
     <div>
-      <input type="text" className="participants inp-manual" name="participants" />
+      <input type="text" className="participants inp-manual" name="participants" id="participants"/>
     </div>
   ) : (
     <div>
@@ -22,11 +22,11 @@ export default function ConditionalRender({ choices }) {
         className="participants inp-file"
         name="participants"
         accept=".csv"
-        id="inp-file"
+        id="participants"
       />
     </div>
   )}
-  <select name="roll_form" id="roll_form" onChange={handleSelectChange}>
+  <select name="roll_choice" id="roll_choice" onChange={handleSelectChange}>
     {choices.map((choice) => (
       <option value={choice} key={choice} id={`roll_form-${choice}`}>
         {choice}
