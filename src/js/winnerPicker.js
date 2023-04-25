@@ -1,4 +1,8 @@
-function winnerPicker(users, count, subCount, type) {
+function winnerPicker(users, count, subCount = 0 , type) {
+  if(count == 0) 
+  alert("Kaç kişinin kazanacağını seçmediniz.");
+
+
   const participants = [...users];
   const winners = [];
   const subWinners = [];
