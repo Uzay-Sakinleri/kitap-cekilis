@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function ConditionalRender({ choices }) {
+export default function ConditionalRender({ choices, types }) {
   const [selectedValue, setSelectedValue] = useState(choices[0]);
   const [text, setText] = useState('');
   
@@ -62,6 +62,23 @@ const handleFileChange = (e) => {
       </option>
     ))}
   </select>
+      <select name="type_choice" id="type_choice">
+        {
+          types.map((type) => (
+            <option value={type} key={type} id={`roll_form-${type}`}>
+              {type}
+            </option>
+          ))
+        }
+      </select>
+      <section id="counters-sec">
+        <div className="counters">
+          <label htmlFor="winner_count">Kaç kişi kazanıcak?</label>
+          <input type="number" id="winner_count" className="counts" />
+          <label htmlFor="subwinner_count">Kaç tane yedek olacak?</label>
+          <input type="number" id="subwinner_count" className="counts" />
+        </div>
+      </section>
   <button className="roll" type="submit" onClick={( e) => checkInput(e)}>ROLL</button>
     </>
   );

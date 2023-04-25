@@ -14,24 +14,7 @@ const { choices, types } = Astro.props;
       <div class="text-1">Katılımcılar</div>
       <!-- <slot /> -->
       <section class="choice-sec">
-        <ConditionalRender choices={choices} client:load />
-      </section>
-      <select name="type_choice" id="type_choice">
-        {
-          types.map((type) => (
-            <option value={type} id={`roll_form-${type}`}>
-              {type}
-            </option>
-          ))
-        }
-      </select>
-      <section id="counters-sec">
-        <div class="counters">
-          <label for="winner_count">Kaç kişi kazanıcak?</label>
-          <input type="number" id="winner_count" class="counts" />
-          <label for="subwinner_count">Kaç tane yedek olacak?</label>
-          <input type="number" id="subwinner_count" class="counts" />
-        </div>
+        <ConditionalRender choices={choices} types={types} client:load />
       </section>
     </div>
   </form>
