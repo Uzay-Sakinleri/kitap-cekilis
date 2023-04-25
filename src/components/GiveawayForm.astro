@@ -1,5 +1,6 @@
 ---
 import "../css/index.css";
+import ConditionalRender from "../components/conditionalRender.jsx";
 const { choices } = Astro.props;
 ---
 
@@ -8,17 +9,8 @@ const { choices } = Astro.props;
     <div class="input">
       <div class="text-1">Katılımcılar</div>
       <slot />
-      <section class="choice-sec">
-        {
-              <select name="roll-method" id={`roll-method`} > 
-
-                {choices.map((choice: string) => (
-                      <option value={choice}  id={`roll-method-${choice}`}>{choice}</option>
-                ))}
-                 
-                </select>
-      
-        }
+      <section class="choice-sec"> 
+        <ConditionalRender choices={choices} client:load/>
       </section>
       <button class="roll" type="submit">ROLL</button>
     </div>

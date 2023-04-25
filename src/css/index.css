@@ -34,7 +34,7 @@
         text-shadow: 2px 2px 8px #ce1141;
       }
       
-      .participants {
+      .inp-manual {
         padding: 10px;
         border: none;
         border-radius: 5px;
@@ -46,8 +46,28 @@
         width: 20vw;
         background-color: #ce1141;
         color: gold;
+        font-size: 1vw;
+            }
 
-        
+      .inp-file {
+        background-color: #570779;
+        color: #ce1141;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 10px;
+        box-shadow: 2px 2px 2px 2px #000;
+      }
+
+      .inp-file:hover {
+        background-color: #3e8e41;
+      }
+
+      .inp-file:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
       }
       
       .roll {
@@ -79,6 +99,8 @@
 }
 
 select {
+  margin: 0 auto;
+  display: block;
   font-family: Arial, sans-serif;
   font-size: 1vw;
   color: #333;
@@ -115,9 +137,3 @@ select option {
 select::-ms-expand {
   display: none;
 }
-
-
-.inp-file.inp-file {
-  display: none;
-}
-
