@@ -2,18 +2,46 @@ import React, { useState } from 'react';
 
 export default function ConditionalRender({ choices }) {
   const [selectedValue, setSelectedValue] = useState(choices[0]);
-  const [showManualInput, setShowManualInput] = useState(true);
-
+  const [text, setText] = useState('');
+  
   const handleSelectChange = (e) => {
     setSelectedValue(e.target.value);
     setShowManualInput(e.target.value === 'Manuel Giriş');
   };
 
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setText(trure);
+    } else {
+      setText(false);
+    }
+  };
+
+  const checkInput = (e) => {
+    if(selectedValue === 'Manual Entry') {
+      if(text == '') {
+        alert('Please enter a name');
+        e.preventDefault();
+      } 
+    } else if (!text) {
+        alert('Please select a file');
+        e.preventDefault();
+    }
+  }
+
   return (
     <>
   {selectedValue === 'Manuel Giriş' ? (
     <div>
-      <input type="text" className="participants inp-manual" name="participants" id="participants"/>
+      <input 
+      type="text" 
+      className="participants inp-manual" 
+      name="participants" 
+      value={text}
+      onChange={(e) => setText(e.target.value)}
+      id="participants"
+      />
     </div>
   ) : (
     <div>
@@ -33,6 +61,7 @@ export default function ConditionalRender({ choices }) {
       </option>
     ))}
   </select>
+  <button className="roll" type="submit" onClick={( e) => checkInput(e)}>ROLL</button>
     </>
   );
 }
