@@ -75,7 +75,7 @@ export default function ConditionalRender({ choices, types }) {
           <label htmlFor="winner_count">Kaç kişi kazanacak?</label>
           <input type="number" id="winner_count" className="counts" min={1} />
           <label htmlFor="subwinner_count">Kaç tane yedek olacak?</label>
-          <input type="number" id="subwinner_count" className="counts" min={1} />
+          <input type="number" id="subwinner_count" className="counts" min={0} />
         </div>
       </section>
       <button className="roll" type="submit" onClick={(e) => checkInput(e)}>ROLL</button>
