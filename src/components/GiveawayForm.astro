@@ -1,17 +1,24 @@
 ---
+interface Props {
+  choices: string[];
+  types: string[];
+}
 import "../css/index.css";
 import ConditionalRender from "../components/conditionalRender.jsx";
-const { choices } = Astro.props;
+const { choices, types } = Astro.props;
 ---
 
 <div class="container">
-  <form method="post" enctype="multipart/form-data">
+  <form method="post" enctype="multipart/form-data" id="roll_form">
     <div class="input">
       <div class="text-1">Katılımcılar</div>
-      <slot />
-      <section class="choice-sec"> 
-        <ConditionalRender choices={choices} client:load/>
+      <!-- <slot /> -->
+      <section class="choice-sec">
+        <ConditionalRender choices={choices} types={types} client:load />
       </section>
     </div>
   </form>
 </div>
+<script>
+  import "@js/winnerPicker";
+</script>

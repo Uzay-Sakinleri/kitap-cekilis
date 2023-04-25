@@ -2,44 +2,11 @@
 import GiveawayForm from "../components/GiveawayForm.astro";
 import "../css/index.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import winnerPicker from "../js/winnerPicker";
-import saveToCSV from "../js/saveToCSV";
-import Winners from "../components/Winners.astro";
-
-let method = localStorage.getItem("select");
-let result: string[] | string = [];
-let isHaveError: boolean = false;
-if (Astro.request.method === "POST") {
-  const form = await Astro.request.formData();
-  const rollMethod = form.get("roll-method");
-  const participants = form.get("participants") as File;
-  switch (rollMethod) {
-    case "manual":
-      result = winnerPicker(participants.toString().split(" "), 5);
-    case "file":
-      const file = participants as File;
-      const lines = (await file.text()).split("\n");
-      lines.shift();
-      result = winnerPicker(
-        lines.map((line) => line.split(",")[0]),
-        5
-      );
-  }
-  isHaveError = typeof result === "string" ? true : false;
-  if (!isHaveError) await saveToCSV(result, "Kitap Çekilişi");
-}
 ---
 
 <BaseLayout title="U Z ∆ Y   H ∆ L K I">
-  <GiveawayForm choices={["Manual Entry", "Csv File"]}>
-    {
-      isHaveError ? (
-        <Winners winners={result} />
-      ) : result.length == 0 ? (
-        ""
-      ) : (
-        <p>{result}</p>
-      )
-    }
-  </GiveawayForm> 
-	</BaseLayout>
+	<GiveawayForm
+		choices={["Manuel Giriş", "CSV Dosyası"]}
+		types={["Kitap Çekilişi"]}
+	/>
+</BaseLayout>
