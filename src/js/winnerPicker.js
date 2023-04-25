@@ -1,3 +1,4 @@
+import displayWinners from "./displayWinners";
 function winnerPicker(users, count, subCount = 0 , type) {
   if(count == 0) 
   alert("Kaç kişinin kazanacağını seçmediniz.");
@@ -9,11 +10,9 @@ function winnerPicker(users, count, subCount = 0 , type) {
   for (let i = 0; i < parseInt(count) + parseInt(subCount); i++) {
     let winner = participants[Math.floor(Math.random() * participants.length)];
     if (i >= count) {
-      console.log(`${i} sub`)
       subWinners.push(winner);
     }
     else {
-      console.log(`${i} main`)
       winners.push(winner);
     }
     participants.splice(participants.findIndex(a => a === winner), 1);
@@ -28,6 +27,7 @@ function winnerPicker(users, count, subCount = 0 , type) {
   }
 
   localStorage.setItem(key, JSON.stringify(results));
+  displayWinners(results);
 }
 
 const rollForm = document.querySelector("#roll_form");
