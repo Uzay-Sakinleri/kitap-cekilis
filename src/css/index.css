@@ -35,6 +35,8 @@
       }
       
       .inp-manual {
+        margin: 0 auto;
+        display: block;
         padding: 10px;
         border: none;
         border-radius: 5px;
@@ -148,9 +150,17 @@ select::-ms-expand {
 }
 
 .counts {
+  margin: 0 auto;
+  display: block;
   font-size: 25px;
   color: gold;
   background-color: #ce1141;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #000;
+  border: 2px solid #ce1141;
+  width: 18vw;
+
+
 }
 
 
