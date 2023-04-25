@@ -8,7 +8,7 @@ export default function ConditionalRender({ choices }) {
     setSelectedValue(e.target.value);
   };
 
-  const handleFileChange = (e) => {
+const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
       setText(trure);
@@ -18,7 +18,7 @@ export default function ConditionalRender({ choices }) {
   };
 
   const checkInput = (e) => {
-    if(selectedValue === 'Manual Entry') {
+    if(selectedValue === 'Manuel Giriş') {
       if(text == '') {
         alert('Please enter a name');
         e.preventDefault();
@@ -31,7 +31,7 @@ export default function ConditionalRender({ choices }) {
 
   return (
     <>
-  {selectedValue === 'Manual Entry' ? (
+  {selectedValue === 'Manuel Giriş' ? (
     <div>
       <input 
       type="text" 
@@ -39,6 +39,7 @@ export default function ConditionalRender({ choices }) {
       name="participants" 
       value={text}
       onChange={(e) => setText(e.target.value)}
+      id="participants"
       />
     </div>
   ) : (
@@ -48,13 +49,13 @@ export default function ConditionalRender({ choices }) {
         className="participants inp-file"
         name="participants"
         accept=".csv"
-        id="inp-file"
         value={text}
         onChange={handleFileChange}
+        id="participants"
       />
     </div>
   )}
-  <select name="roll_form" id="roll_form" onChange={handleSelectChange}>
+  <select name="roll_choice" id="roll_choice" onChange={handleSelectChange}>
     {choices.map((choice) => (
       <option value={choice} key={choice} id={`roll_form-${choice}`}>
         {choice}
