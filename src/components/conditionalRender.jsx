@@ -3,65 +3,65 @@ import React, { useState } from 'react';
 export default function ConditionalRender({ choices, types }) {
   const [selectedValue, setSelectedValue] = useState(choices[0]);
   const [text, setText] = useState('');
-  
+
   const handleSelectChange = (e) => {
     setSelectedValue(e.target.value);
   };
 
-const handleFileChange = (e) => {
+  const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setText(trure);
+      setText(true);
     } else {
       setText(false);
     }
   };
 
   const checkInput = (e) => {
-    if(selectedValue === 'Manuel Giriş') {
-      if(text == '') {
+    if (selectedValue === 'Manuel Giriş') {
+      if (text == '') {
         alert('Lütfen kullanıcıları giriş yaptıktan sonra basın.');
         e.preventDefault();
-      } 
+      }
     } else if (!text) {
-        alert('Lütfen kullanıcıların olduğu csv dosyasını seçtikten sonra basın.');
-        e.preventDefault();
+      alert('Lütfen kullanıcıların olduğu csv dosyasını seçtikten sonra basın.');
+      e.preventDefault();
     }
   }
 
   return (
     <>
-  {selectedValue === 'Manuel Giriş' ? (
-    <div>
-      <input 
-      type="text" 
-      className="participants inp-manual" 
-      name="participants" 
-      value={text}
-      onChange={(e) => setText(e.target.value)}
-      id="participants"
-      />
-    </div>
-  ) : (
-    <div>
-      <input
-        type="file"
-        className="participants inp-file"
-        name="participants"
-        accept=".csv"
-        value={text}
-        onChange={handleFileChange}
-        id="participants"
-      />
-    </div>
-  )}
-  <select name="roll_choice" id="roll_choice" onChange={handleSelectChange}>
-    {choices.map((choice) => (
-      <option value={choice} key={choice} id={`roll_form-${choice}`}>
-        {choice}
-      </option>
-    ))}
-  </select>
+      {selectedValue === 'Manuel Giriş' ? (
+        <div>
+          <input
+            type="text"
+            className="participants inp-manual"
+            name="participants"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            id="participants"
+          />
+        </div>
+      ) : (
+        <div>
+          <input
+            type="file"
+            className="participants inp-file"
+            name="participants"
+            accept=".csv"
+            value={text}
+            onChange={handleFileChange}
+            id="participants"
+          />
+        </div>
+      )}
+      <select name="roll_choice" id="roll_choice" onChange={handleSelectChange}>
+        {choices.map((choice) => (
+          <option value={choice} key={choice} id={`roll_form-${choice}`}>
+            {choice}
+          </option>
+        ))}
+      </select>
       <select name="type_choice" id="type_choice">
         {
           types.map((type) => (
@@ -79,7 +79,7 @@ const handleFileChange = (e) => {
           <input type="number" id="subwinner_count" className="counts" />
         </div>
       </section>
-  <button className="roll" type="submit" onClick={( e) => checkInput(e)}>ROLL</button>
+      <button className="roll" type="submit" onClick={(e) => checkInput(e)}>ROLL</button>
     </>
   );
 }
