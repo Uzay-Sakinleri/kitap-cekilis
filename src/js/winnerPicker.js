@@ -43,6 +43,7 @@ rollForm.addEventListener("submit", async (e) => {
     const lines = (await userFileInput.text()).split("\n");
     lines.shift();
     users = lines.map((line) => line.split(",")[0]);
+    if(users[users.length - 1] === "")
     users.pop();
   }
   else {
