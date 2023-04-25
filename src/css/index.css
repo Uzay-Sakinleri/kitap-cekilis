@@ -58,6 +58,7 @@
         cursor: pointer;
         margin: 10px;
         box-shadow: 2px 2px 2px 2px #000;
+        width: 80%;
       }
 
       .inp-file:hover {
@@ -71,6 +72,8 @@
       }
       
       .roll {
+        margin: 0 auto;
+        display: block;
         padding: 10px 20px;
         background-color: #720e9e;
         color: #000;
