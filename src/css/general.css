@@ -8,7 +8,7 @@ body{
         margin: 0;
         height: 100vh;
         cursor: var(--saturn_spear), auto;
-        background: linear-gradient(90deg, rgba(36,0,35,1) 0%, rgba(121,9,120,1) 35%, rgba(59,0,255,1) 100%);
+        background: linear-gradient(45deg, #FC466B, #3F5EFB);
         font-family: sans-serif;
         font-size: 16px;
         overflow: hidden;

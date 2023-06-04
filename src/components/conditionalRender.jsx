@@ -79,6 +79,13 @@ export default function ConditionalRender({ choices, types }) {
         </div>
       </section>
       <button className="roll" type="submit" onClick={(e) => checkInput(e)}>ROLL</button>
+      <footer id='credentials' className='credentials'>
+        <div>
+        <span>
+         © developed by Pride Ring and Sefirot
+        </span>
+        </div>
+          </footer>
     </>
   );
 }
