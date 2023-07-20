@@ -39,6 +39,7 @@ const participantsInput = document.querySelector("#participants");
 const winnerCount = document.querySelector("#winner_count");
 const subWinnerCount = document.querySelector("#subwinner_count");
 const giveawayType = document.querySelector("#type_choice");
+
 rollForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   let users;
@@ -52,7 +53,8 @@ rollForm.addEventListener("submit", async (e) => {
   }
   else {
     const value = participantsInput.value;
-    users = value.split(" ");
+    users = value.split("\n");
+    users = users.filter(a => a && a !== "\n");
   }
   winnerPicker(users, winnerCount.value, subWinnerCount.value, giveawayType.value);
 });
