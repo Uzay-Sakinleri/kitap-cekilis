@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function ConditionalRender({ choices, types }) {
   const [selectedValue, setSelectedValue] = useState(choices[0]);
@@ -32,8 +32,7 @@ export default function ConditionalRender({ choices, types }) {
     <>
       {selectedValue === 'Manuel Giriş' ? (
         <div>
-          <input
-            type="text"
+          <textarea
             className="participants inp-manual"
             name="participants"
             value={text}
