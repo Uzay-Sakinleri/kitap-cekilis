@@ -12,92 +12,91 @@
         animation: typing 3.5s steps(40, end), .75s step-end infinite;
         
 }
-  .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-        width: 100%;
-        height: 100vh;
-  }
+.container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      width: 100%;
+      height: 100vh;
+}
 
 .input {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
 
-      .text-1 {
-        font-size: 2vw;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px 8px #ce1141;
-      }
-      
-      .inp-manual {
-        margin: 0 auto;
-        display: block;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        box-shadow: 5px 5px 5px #000;
-        border: 2px solid #ce1141;
-        border-radius: 5px;
-        height: 10vw;
-        width: 20vw;
-        background-color: #ce1141;
-        color: gold;
-        font-size: 1vw;
-            }
+.text-1 {
+  font-size: 2vw;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 8px #ce1141;
+}
 
-      .inp-file {
-        background-color: #570779;
-        color: #ce1141;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin: 10px;
-        box-shadow: 2px 2px 2px 2px #000;
-        width: 80%;
-      }
+.inp-manual {
+  margin: 0 auto;
+  display: block;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 5px #000;
+  border: 2px solid #ce1141;
+  border-radius: 5px;
+  height: 10vw;
+  width: 20vw;
+  background-color: #ce1141;
+  color: gold;
+  font-size: 1vw;
+}
 
-      .inp-file:hover {
-        background-color: #3e8e41;
-      }
+.inp-file {
+  background-color: #570779;
+  color: #ce1141;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  box-shadow: 2px 2px 2px 2px #000;
+  width: 80%;
+}
 
-      .inp-file:active {
-        background-color: #3e8e41;
-        box-shadow: 0 5px #666;
-        transform: translateY(4px);
-      }
-      
-      .roll {
-        margin: 0 auto;
-        display: block;
-        padding: 10px 20px;
-        background-color: #720e9e;
-        color: #000;
-        width: 18vw;
-        height: 3vw;
-        border: none;
-        border-radius: 5px;
-        font-size: 1vw;
-        text-align: center;
-        border: 2px solid #000;
-        box-shadow: 2px 2px 2px 2px #000;
-      }
-      
-      .roll:hover {
-        background-color: #3e8e41;
-      }
-      
+.inp-file:hover {
+  background-color: #3e8e41;
+}
 
-      @keyframes typing {
-        from { width: 0 }
-        to { width: 100% }
-      }
+.inp-file:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.roll {
+  margin: 0 auto;
+  display: block;
+  padding: 10px 20px;
+  background-color: #720e9e;
+  color: #000;
+  width: 18vw;
+  height: 3vw;
+  border: none;
+  border-radius: 5px;
+  font-size: 1vw;
+  text-align: center;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 2px 2px #000;
+}
+
+.roll:hover {
+  background-color: #3e8e41;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
 
 select {
   margin: 0 auto;
@@ -159,8 +158,6 @@ select::-ms-expand {
   box-shadow: 5px 5px 5px #000;
   border: 2px solid #ce1141;
   width: 18vw;
-
-
 }
 
 .winners-sec{
